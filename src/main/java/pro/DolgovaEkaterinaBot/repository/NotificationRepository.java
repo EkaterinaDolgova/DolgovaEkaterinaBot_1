@@ -11,5 +11,5 @@ import java.util.List;
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
     Collection<Notification> findByTextY(Long Id);
 
-    List<Notification> findByDatetime();
+   // List<Notification> findByDatetime();
 }
