@@ -67,7 +67,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     }
     @Scheduled(cron = "0 0/1 * * * *")
     public void run() {
-        notificationService.findByDatetime().stream().map(n->new SendMessage(n.getId_chat(),n.getTextY())).collect(Collectors.toList());
+        notificationService.findByDatetime().stream().map(n->telegramBot.execute(new SendMessage(n.getId_chat(),n.getTextY()))).collect(Collectors.toList());
     }
 
 }
